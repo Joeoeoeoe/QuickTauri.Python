@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home.vue';
-import GenericToolPage from '@/views/GenericToolPage.vue';
+import Home from '@/components/Home.vue';
+import GenericToolPage from '@/components/GenericToolPage.vue';
 
 import { ref } from 'vue';
 

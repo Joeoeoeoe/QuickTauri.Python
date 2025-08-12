@@ -49,7 +49,7 @@ export const useToolStore = defineStore('tool', () => {
   // 初始化时注册工具组件
   // 基础组件
   toolComponents.value = {
-    TestTool: () => import('../components/TestTool.vue')
+    TestTool: () => import('../views/TestTool.vue')
   };
   // 其余组件可以在任意.vue中通过registerToolComponent进行注册
   // 例如：
