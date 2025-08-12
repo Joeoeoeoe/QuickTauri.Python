@@ -36,7 +36,7 @@ const greet = async () => {
   try {
     // 访问 ref 的值需要 .value
     greeting.value = await callPython(
-      './python_scripts/example.py',
+      './src-tauri/python_scripts/example.py',
       'greet',
       name.value // 传递 ref 的值
     );
@@ -50,7 +50,7 @@ const addNumbers = async () => {
   try {
     // 确保传递的是数字类型，使用 parseInt
     sum.value = await callPython(
-      './python_scripts/example.py',
+      './src-tauri/python_scripts/example.py',
       'add',
       String(num1.value), // 需要传递字符串
       String(num2.value)
@@ -64,7 +64,7 @@ const addNumbers = async () => {
 setInterval(async () => {
   try {
     const x = await callPython(
-      './python_scripts/example.py',
+      'src-tauri/python_scripts/example.py',
       'generate_random_string',
     );
     randomString.value = x;

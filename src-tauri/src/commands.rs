@@ -17,7 +17,13 @@ pub async fn call_python_script(
     args: Vec<String>,
     state: State<'_, Arc<Mutex<Mutex<InstanceCache>>>>,
 ) -> Result<String, String> {
-    let script_path = PathBuf::from(script_path);
+    // 将相对路径转换为相对于 src-tauri 的路径
+    let script_path = {
+        let mut tauri_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        tauri_dir.pop(); // 回到项目根目录
+        tauri_dir.push(&script_path);
+        tauri_dir.strip_prefix(env!("CARGO_MANIFEST_DIR")).unwrap_or(&PathBuf::from(&script_path)).to_path_buf()
+    };
     let function_name = function_name.clone();
     let args = args.clone();
     let state = state.inner().clone();

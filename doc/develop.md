@@ -31,7 +31,7 @@
     const zzz = async () => {
     try {
         greeting.value = await callPython(
-        './python_scripts/xxx.py',
+        './src-tauri/python_scripts/xxx.py',
         'yyy', 
         str_arg_1,
         str_arg_2
