@@ -9,6 +9,7 @@ export const useToolStore = defineStore('tool', () => {
   // route用于路由参数
   // id <=> 组件 <=> 路由参数
   // 因此即使（1）id重复了也不会报错，因为通过categories渲染，并不要求不能重复（2）组件未注册，也可以通过路由访问
+  // icon可以用简单的相对路径，例如./x/y.svg x/y.svg /x.svg 但是不能用.. 
   const categories = ref([
     { 
       name: '测试工具', 

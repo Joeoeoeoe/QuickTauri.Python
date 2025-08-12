@@ -19,9 +19,6 @@ const props = defineProps({
   category: {
     type: Object,
     required: true,
-    validator: (value) => {
-      return value.name && typeof value.name === 'string';
-    },
   },
 });
 
