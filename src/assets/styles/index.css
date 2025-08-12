@@ -1,0 +1,9 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 你自己的额外样式也可以放在这里 */
+body {
+  margin: 0;
+}

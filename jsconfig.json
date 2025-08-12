@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // 这很重要，它告诉语言服务从哪里开始解析路径
+    "target": "esnext", // 目标ES版本，根据你的项目需要调整
+    "module": "esnext", // 模块系统，根据你的项目需要调整 (对于 Vite 通常是 esnext)
+    "moduleResolution": "node", // 模块解析策略
+    "jsx": "preserve", // 保留 JSX，这对于 Vue 来说并不直接使用 JSX，但有时某些库可能需要
+    "allowJs": true, // 允许编译 JS 文件（默认就是 true）
+    "checkJs": true, // **关键！** 启用 JavaScript 文件的类型检查，这样才能显示错误
+    "skipLibCheck": true, // 跳过库文件的类型检查
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true, // 不生成编译输出文件
+    "isolatedModules": true, // 视为单独的模块
+    "lib": ["esnext", "dom", "dom.iterable"], // 引入运行时库
+    "paths": { // 如果你有路径别名，在这里配置
+      "@/*": ["src/*"] // 例如，将 @ 映射到 src 目录，用于导入
+    }
+  },
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.vue", // 包含 Vue 单文件组件
+    "src/**/*.ts", // 如果未来可能引入少量 TS 文件
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist" // 你的构建输出目录
+  ]
+}
